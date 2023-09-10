@@ -1,6 +1,5 @@
 ﻿using CloudStructures;
 using CloudStructures.Structures;
-using MessagePack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -160,43 +159,5 @@ namespace csharp_test_client
 
     }
 
-    [MessagePackObject]
-    public class PvPMatchingResult
-    {
-        [Key(0)]
-        public string IP;
-        [Key(1)]
-        public UInt16 Port;
-        [Key(2)]
-        public Int32 RoomNumber;
-        [Key(3)]
-        public Int32 Index;
-        [Key(4)]
-        public string Token;
-    }
-
-
-    public class GameServerInfo
-    {
-        public Int32 Index;
-        public string IP;
-        public UInt16 Port;
-    }
-    public class PvPGameServerGroup
-    {
-        public List<GameServerInfo> ServerList = new List<GameServerInfo>();
-    }
-
-    public class KeyDefine
-    {
-        public const string RequesMatchingQueue = "req_matching";
-
-        public const string PvPGameServerList = "pvp_gameServer_list";
-
-        public const string PrefixGameServerRoomQueue = "gs_room_queue_";
-
-        public const string PrefixMatchingResult = "ret_matching_";
-
-        public const string PrefixMatchingResultToGameServer = "ret_newGmae_";
-    }
+    
 }
